@@ -21,8 +21,8 @@
   </div>
 </div>
 
-<%  if @section %>
-        <% @section.food_items.each do |food| %>
+<%  if @food_items %>
+        <% @food_items.each do |food| %>
         <h3><%= food.name %></h3>
        <p><%= food.description %></p>
         <p><%= food.price %></p>

@@ -41,7 +41,7 @@ drink_url = ["http://assets.kraftfoods.com/recipe_images/opendeploy/154815_640x4
       description: Faker::Lorem.sentence,
       price: Faker::Commerce.price,
       section_id: 1,
-      image_url: breakfast_url[x-1]
+      image_url: breakfast_url[x]
   )
 end
 5.times do |x|
@@ -50,7 +50,7 @@ end
       description: Faker::Lorem.sentence,
       price: Faker::Commerce.price,
       section_id: 2,
-      image_url: lunch_url[x-1]
+      image_url: lunch_url[x]
   )
 end
 5.times do |x|
@@ -59,7 +59,7 @@ end
       description: Faker::Lorem.sentence,
       price: Faker::Commerce.price,
       section_id: 3,
-  image_url: dinner_url[x-1]
+  image_url: dinner_url[x]
   )
 end
 5.times do |x|
@@ -68,6 +68,6 @@ end
       description: Faker::Lorem.sentence,
       price: Faker::Commerce.price,
       section_id: 4,
-      image_url: drink_url[x-1]
+      image_url: drink_url[x]
   )
 end

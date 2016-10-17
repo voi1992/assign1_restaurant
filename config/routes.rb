@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'menu' => 'home#menu'
   get 'contanct_us' => 'home#contact_us'
+  get 'search' => 'home#search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
