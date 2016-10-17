@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016062425) do
+ActiveRecord::Schema.define(version: 20161017061141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,9 +21,19 @@ ActiveRecord::Schema.define(version: 20161016062425) do
     t.decimal  "price"
     t.string   "image_url"
     t.integer  "section_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "userorder_id"
     t.index ["section_id"], name: "index_food_items_on_section_id", using: :btree
+    t.index ["userorder_id"], name: "index_food_items_on_userorder_id", using: :btree
+  end
+
+  create_table "orderlists", force: :cascade do |t|
+    t.string   "order_list"
+    t.integer  "userorder_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["userorder_id"], name: "index_orderlists_on_userorder_id", using: :btree
   end
 
   create_table "sections", force: :cascade do |t|
@@ -32,5 +42,23 @@ ActiveRecord::Schema.define(version: 20161016062425) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+    t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+  end
+
+  create_table "userorders", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   add_foreign_key "food_items", "sections"
+  add_foreign_key "orderlists", "userorders"
 end

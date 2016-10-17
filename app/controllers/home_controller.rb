@@ -22,6 +22,22 @@ class HomeController < ApplicationController
 
   end
 
+  def order
+    session[:food] = [] if session[:food].nil?
+    food_order=FoodItem.find(params[:id])
+    session[:food] << food_order
+    @food_items = session[:food]
+    @total_price=0
+  end
+
+  def remove_order
+
+    session[:food].delete_at(params[:id].to_i)
+    @food_items = session[:food]
+    @total_price=0
+    render 'home/order'
+  end
+
   def sort_food_by_params(params, section)
 
     case params
@@ -35,5 +51,9 @@ class HomeController < ApplicationController
       else
         section.food_items
     end
+  end
+
+  def home_params
+    params.permit(:id)
   end
 end

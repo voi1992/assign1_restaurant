@@ -20,6 +20,8 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
+
+gem 'activerecord-session_store'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

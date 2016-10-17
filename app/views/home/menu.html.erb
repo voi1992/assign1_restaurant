@@ -24,8 +24,8 @@
 <%  if @food_items %>
         <% @food_items.each do |food| %>
         <h3><%= food.name %></h3>
-       <p><%= food.description %></p>
-        <p><%= food.price %></p>
         <img src="<%=food.image_url%>" style="width: 600px; height: 400px">
+        <p><%= food.price %></p>
+        <a class="btn btn-primary" href="<%=order_path(id: food.id) %>" role="button">Order</a>
       <%end%>
 <%end%>
