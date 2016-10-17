@@ -58,7 +58,7 @@ The following **known issues**:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
+![Video Walkthrough](https://github.com/voi1992/assign1_restaurant/blob/master/gif/assignment1.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
