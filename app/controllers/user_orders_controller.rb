@@ -1,6 +1,7 @@
 class UserOrdersController < ApplicationController
 
   def create
+    session[:food] = []
     @userorder = Userorder.new(user_order_params)
     params[:order_list].length.times do |i|
       @userorder.food_items << FoodItem.find(params[:order_list][i].to_i)
